@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>APOLLO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                background-color:#088F8F;
+                color: white;
+            }
+            a{
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 80px;
+                background-color: #96DED1; 
+                padding: 10px; 
+                border: 1px solid white; 
+            }
+            .one{
+                background-color: #088F8F;
+                color: white;
+                padding:20px;
+                margin:70px;
+                margin-left: 100px;
+                margin-right: 500px;
+                text-align: justify;
+                font-size: 20px;
+            }
+            p{
+               text-align: justify;  
+            }
+            table{
+                background-color: #96DED1;
+                border-collapse: collapse;
+                padding:60px;
+            }
+            th,td{
+                border: 1px solid white;
+                text-align: justify;
+                border-collapse: collapse;
+            }
+            .f1{
+                 position: absolute; 
+                 bottom: 0;
+                 right: 0;
+                 background-color: #96DED1;
+                 padding: 10px;
+                 margin-bottom:5px;
+            }
+            
+        </style>
+    </head>
+    <body style ="background-image: url('bg2.jpg'); background-size: 100%">
+        <div>
+            <center><h1>APOLLO HOSPITAL MANAGEMENT</h1></center>
+            <a href='login.html'>SignUp/LogIn</a>
+            <p class='one'>
+                Apollo Hospital Management is a sophisticated system that efficiently coordinates 
+                all hospital operations, from patient registration to billing. It tracks patient 
+                records, manages doctor schedules, and optimizes inventory, ensuring seamless healthcare 
+                delivery. With integrated billing and finance modules, it streamlines revenue management. 
+                Electronic Health Records (EHR) enable secure data storage and retrieval, while appointment
+                scheduling reduces wait times. Laboratory and diagnostic integration enhances efficiency, 
+                and robust analytics support informed decision-making. Mobile access further boosts 
+                flexibility, making it a comprehensive solution for effective hospital management.
+            </p>
+            <table>
+                <tr>
+                    <th> </th>
+                    <th>Facilities</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><img src="ASC.jpg" alt='Cant display' height='100' width="100"></td>
+                    <td>Ambulatory surgical centers</td>
+                    <td><p>Ambulatory surgical centers, also called outpatient surgical <br>
+                        facilities, allow patients to receive certain surgical procedures outside a <br>
+                        hospital environment</p></td>
+                </tr>
+                <tr>
+                    <td><img src='bloodbank.jpg' height='100' width='100'></td>
+                    <td>Blood Bank</td>
+                    <td><p>Blood banks allow donors to donate blood and platelets while also <br>
+                            storing and sorting blood into components that can be used most <br>
+                            effectively by patients.</p></td>
+                </tr>
+                <tr>
+                    <td><img src='download.jpg' height="100" width='100'></td>
+                    <td>Imaging and Radiology Centers</td>
+                    <td><p>These facilities, much like their hospital counterparts, <br>
+                            offer diagnostic imaging services to patients</p></td>
+                </tr>
+            </table>
+            <form class='f1'>
+                <fieldset>
+                    <legend>Details</legend>
+                    Name:<input type='text' name='t1'><br><br>
+                    Age:<input type='number'><br><br>
+                    Gender: Male<input type='radio'> Female <input type="radio"><br><br>
+                    Address:<textarea></textarea><br>
+                   
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
