@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>qnno3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                function addNewPrefix(str) {
+    // Check if the string already starts with "New!"
+    if (str.startsWith("New!")) {
+        return str; // If yes, return the original string
+    } else {
+        return "New!" + str; // If not, add "New!" in front of the string
+    }
+}
+
+// Test the function
+document.write(addNewPrefix("String")); // Output: New!String
+document.write(addNewPrefix("New!String")); // Output: New!String (original string returned)
+
+            </script>
+        </div>
+    </body>
+</html>

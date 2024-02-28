@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qnno1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+              // Define the Employee object
+function Employee(name, salary) {
+    this.name = name;
+    this.salary = salary;
+}
+
+// Create some sample employee objects
+var employees = [
+    new Employee("John", 50000),
+    new Employee("Alice", 60000),
+    new Employee("Bob", 45000),
+    new Employee("Carol", 70000)
+];
+
+// Function to compare employees based on salary
+function compareSalary(employee1, employee2) {
+    return employee2.salary - employee1.salary;
+}
+
+// Sort the employees based on salary (descending order)
+employees.sort(compareSalary);
+
+// Display the sorted employees
+document.write("Employees sorted by salary (descending order):");
+for (var i = 0; i < employees.length; i++) {
+    document.write("<br>", employees[i].name + ": $" + employees[i].salary);
+}
+
+            </script>
+        </div>
+    </body>
+</html>

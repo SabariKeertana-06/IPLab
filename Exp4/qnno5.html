@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>qnno5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                function check(){
+                    var name= prompt("Enter name:");
+                    alert("Welcome "+name);
+                    var currentDate = new Date();
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        var formattedDate = monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ", " + currentDate.getFullYear();
+        document.write("<p>Current Date: " + formattedDate + "</p>");
+        
+        // Display the last modified date of the document
+        var lastModifiedDate = document.lastModified;
+        document.write("<p>Last Modified Date: " + lastModifiedDate + "</p>");
+                }
+                check();
+            </script>
+        </div>
+    </body>
+</html>

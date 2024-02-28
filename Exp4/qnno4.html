@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>qnno4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                function csvToArray(csvString) {
+    // Split the CSV string into rows
+    var rows = csvString.split('\n');
+    
+    // Initialize the 2D array
+    var result = [];
+    
+    // Loop through each row
+    for (var i = 0; i < rows.length; i++) {
+        // Split the row into individual values
+        var values = rows[i].split(',');
+        
+        // Add the values to the result array
+        result.push(values);
+    }
+    
+    return result;
+}
+
+// Test the function
+var csvString = "1,2,3\n4,5,6\n7,8,9";
+var array2D = csvToArray(csvString);
+document.write(array2D);
+
+            </script>
+        </div>
+    </body>
+</html>

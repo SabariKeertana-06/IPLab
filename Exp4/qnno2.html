@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>qnno2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                // Given string
+var inputString = 'A1B2C3D4E5F6G7H8I9J10';
+
+// Remove all numbers
+var stringWithoutNumbers = '';
+for (var i = 0; i < inputString.length; i++) {
+    if (isNaN(parseInt(inputString[i]))) {
+        stringWithoutNumbers += inputString[i];
+    }
+}
+
+// Output the result
+document.write("String without numbers:", stringWithoutNumbers);
+
+            </script>
+        </div>
+    </body>
+</html>
