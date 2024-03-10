@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Selection Form</title>
+<style>
+.error {
+  color: red;
+}
+</style>
+</head>
+<body>
+<form id="carContactForm" action="#" onsubmit="return validateForm()">
+  <h3>Car Selection</h3>
+  <label for="carSelection">What car would you like to buy?</label><br>
+  <input type="radio" id="proton" name="carSelection" value="Proton">
+  <label for="proton">Proton</label><br>
+  <input type="radio" id="honda" name="carSelection" value="Honda">
+  <label for="honda">Honda</label><br>
+  <input type="radio" id="ferrari" name="carSelection" value="Ferrari">
+  <label for="ferrari">Ferrari</label><br>
+  <input type="radio" id="ford" name="carSelection" value="Ford">
+  <label for="ford">Ford</label><br>
+  <span id="carSelectionError" class="error"></span><br>
+
+  <label for="carColor">What color do you want on your car?</label><br>
+  <select id="carColor" name="carColor">
+    <option value="">Select a color</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="black">Black</option>
+    <option value="white">White</option>
+  </select>
+  Other<input type="text">
+  <br>
+  <span id="carColorError" class="error"></span><br>
+
+  <label for="carSpecifications">Enter other specifications for your preferred car:</label><br>
+  <textarea id="carSpecifications" name="carSpecifications" rows="4" cols="50"></textarea><br>
+  <span id="carSpecificationsError" class="error"></span><br>
+
+  <h3>Contact Information</h3>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <span id="nameError" class="error"></span><br>
+
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <span id="emailError" class="error"></span><br>
+
+  <label for="phone">Phone Number:</label><br>
+  <input type="text" id="phone" name="phone"><br>
+  <span id="phoneError" class="error"></span><br>
+
+  <input type="checkbox" id="contactMe" name="contactMe">
+  <label for="contactMe">Please contact me as soon as possible</label><br>
+  <span id="contactMeError" class="error"></span><br>
+
+  <input type="submit" value="Submit">
+  <input type="reset" value="Clear">
+</form>
+
+<script>
+function validateForm() {
+  // Car selection validation
+  var carSelection = document.querySelector('input[name="carSelection"]:checked');
+  var carSelectionError = "";
+  if (!carSelection) {
+    carSelectionError = "Please select a car";
+  }
+
+  // Car color validation
+  var carColor = document.getElementById("carColor").value;
+  var carColorError = "";
+  if (carColor === "") {
+    carColorError = "Please select a color or specify it here";
+  }
+
+  // Car specifications validation
+  var carSpecifications = document.getElementById("carSpecifications").value.trim();
+  var carSpecificationsError = "";
+  if (carSpecifications === ""||carSpecifications.length<10||carSpecifications.length>15) {
+    carSpecificationsError = "Specifications cannot be empty";
+  }
+
+  // Name validation
+  var namePattern = /^[a-zA-Z\s'-]+$/;
+  if (name === "") {
+    nameError = "Name is required";
+  } else if (!namePattern.test(name)) {
+    nameError = "Invalid name";
+  }
+
+  // Email validation
+  var email = document.getElementById("email").value.trim();
+  var emailError = "";
+  var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (email === "") {
+    emailError = "Email is required";
+  } else if (!emailPattern.test(email)) {
+    emailError = "Invalid email address";
+  }
+
+  // Phone validation
+  var phone = document.getElementById("phone").value.trim();
+  var phoneError = "";
+  var phonePattern = /^\d{10}$/;
+  if (phone === "") {
+    phoneError = "Phone number is required";
+  } else if (!phonePattern.test(phone)) {
+    phoneError = "Invalid phone number";
+  }
+
+  // Checkbox validation
+  var contactMeChecked = document.getElementById("contactMe").checked;
+  var contactMeError = "";
+  if (!contactMeChecked) {
+    contactMeError = "Please agree to be contacted";
+  }
+
+  // Displaying errors
+  document.getElementById("carSelectionError").innerHTML = carSelectionError;
+  document.getElementById("carColorError").innerHTML = carColorError;
+  document.getElementById("carSpecificationsError").innerHTML = carSpecificationsError;
+  document.getElementById("nameError").innerHTML = nameError;
+  document.getElementById("emailError").innerHTML = emailError;
+  document.getElementById("phoneError").innerHTML = phoneError;
+  document.getElementById("contactMeError").innerHTML = contactMeError;
+
+  // Prevent form submission if there are errors
+  if (carSelectionError || carColorError || carSpecificationsError || nameError || emailError || phoneError || contactMeError) {
+    return false;
+  }
+
+  // Form submission can proceed
+  return true;
+}
+</script>
+
+</body>
+</html>
