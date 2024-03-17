@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qnno2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+       <div class="container">
+    <input type="text" id="textInput" placeholder="Enter text...">
+    <button id="countButton">Count Words</button>
+    <div id="wordCountResult"></div>
+</div>
+
+<script>
+    document.getElementById("countButton").addEventListener("click", function() {
+        var inputText = document.getElementById("textInput").value.trim();
+        var wordCount = inputText.split(/\s+/).filter(function(word) {
+            return word.length > 0;
+        }).length;
+        document.getElementById("wordCountResult").textContent = "Number of words: " + wordCount;
+    });
+</script>
+    </body>
+</html>
