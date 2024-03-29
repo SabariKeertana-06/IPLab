@@ -1,0 +1,66 @@
+<%@page import="java.sql.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Transaction Details</title>
+</head>
+<body>
+    <h1>Customer Transaction Details</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Current Balance</th>
+                <th>Total Credits</th>
+                <th>Total Debits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%  try { 
+                    Connection c = DriverManager.getConnection("jdbc:derby://localhost:1527/ip_8");
+                    Statement st = c.createStatement();
+                    ResultSet rs = st.executeQuery("SELECT DISTINCT account_no, customer_name FROM transactions");
+                    while (rs.next()) {
+                        String accno= rs.getString("account_no");
+                        String name = rs.getString("customer_name");
+                        double currentBalance = 0.0;
+                        double totalCredits = 0.0;
+                        double totalDebits = 0.0;
+                        PreparedStatement pstmt = c.prepareStatement("SELECT amount, transaction_type FROM transactions WHERE account_no = ?");
+                        pstmt.setString(1, accno);
+                        ResultSet rs2 = pstmt.executeQuery();
+                        while (rs2.next()) {
+                            double amount = rs2.getDouble("amount");
+                            String type = rs2.getString("transaction_type");
+                                amount = Math.abs(amount);
+                            if (type.equals("CREDIT")) {
+                                totalCredits += amount;
+                            } else if (type.equals("DEBIT")) {
+                                totalDebits += amount;
+                            }
+                        }
+                        currentBalance = Math.abs(totalCredits - totalDebits);
+                        out.println("<tr>");
+                        out.println("<td>" + accno + "</td>");
+                        out.println("<td>" + name + "</td>");
+                        out.println("<td>" + currentBalance + "</td>");
+out.println("<td>" + totalCredits + "</td>");
+                        out.println("<td>" + totalDebits + "</td>");
+                        out.println("</tr>");
+                        rs2.close();
+                        pstmt.close();
+                    }
+                    rs.close();
+                    st.close();
+                    c.close();
+                } catch (SQLException e) {
+                    out.println("Error: " + e.getMessage());
+                } 
+            %>
+        </tbody>
+    </table>
+</body>
+</html>
