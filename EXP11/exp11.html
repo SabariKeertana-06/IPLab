@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription Form</title>
+</head>
+<body>
+    <h2>Subscribe to Our Service</h2>
+    <form action="http://localhost/PhpProject1/exp11.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="plan">Subscription Plan:</label>
+        <select id="plan" name="plan" required>
+            <option value="basic">Basic</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+        </select><br><br>
+        
+        <input type="submit" value="Subscribe">
+    </form>
+</body>
+</html>
