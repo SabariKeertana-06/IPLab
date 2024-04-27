@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <product id="1">
+    <name>Laptop</name>
+    <price>1200</price>
+    <description>A powerful laptop with SSD storage.</description>
+  </product>
+  <product id="2">
+    <name>Smartphone</name>
+    <price>500</price>
+    <description>An Android smartphone with a large display.</description>
+  </product>
+  <product id="3">
+    <name>Headphones</name>
+    <price>80</price>
+    <description>Wireless Bluetooth headphones.</description>
+  </product>
+  <product id="4">
+    <name>Camera</name>
+    <price>600</price>
+    <description>A DSLR camera with interchangeable lenses.</description>
+  </product>
+</products>
