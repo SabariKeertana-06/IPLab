@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsltmovie.xsl"?>
+<movies>
+    <movie>
+        <title>AAA</title>
+        <director>ZZZ</director>
+        <genre>Drama</genre>
+        <year>1994</year>
+        <rating>9</rating>
+        <available>yes</available>
+    </movie>
+    <movie>
+        <title>BBB</title>
+        <director>YYY</director>
+        <genre>Crime</genre>
+        <year>1972</year>
+        <rating>9</rating>
+        <available>yes</available>
+    </movie>
+    <movie>
+        <title>CCC</title>
+        <director>XXX</director>
+        <genre>Action</genre>
+        <year>2008</year>
+        <rating>8.5</rating>
+        <available>yes</available>
+    </movie>
+    <movie>
+        <title>DDD</title>
+        <director>WWW</director>
+        <genre>Crime</genre>
+        <year>1994</year>
+        <rating>8.9</rating>
+        <available>yes</available>
+    </movie>
+</movies>
